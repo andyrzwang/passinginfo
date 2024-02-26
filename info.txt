@@ -1,4 +1,5 @@
-const char *errorMessages[] = {
+void printError(int typeError, FILE *outputFile){
+	const char *errorMessages[] = {
         "ERROR: The number of rows was not in the input file (reached eof)", // error 1
         "ERROR: The number of rows could not be read due to corrupt data in the file",// error 2
         "ERROR: The number of rows was outside the specified range (50 to 300 inclusive)",
@@ -15,3 +16,9 @@ const char *errorMessages[] = {
         "ERROR: The initSeed could not be read due to corrupt data in the file",//error 14
         "ERROR: The initSeed was outside the specified range (10 to 32767 inclusive)"
     };
+
+	// char errorString[200] = *errorMessages[typeError - 1];
+	printf("%s", *errorMessages[typeError - 1]);	
+	fprintf(stderr, "%s", *errorMessages[typeError - 1]);
+	fprintf(outputFile, "%s", *errorMessages[typeError - 1]);
+}
