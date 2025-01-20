@@ -1,0 +1,1 @@
+./dictionary.bin txt/small.txt > out/small.txt.dictionary; diff out/small.txt.dictionary reference/small.txt.dictionary
